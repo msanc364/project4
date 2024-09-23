@@ -2,9 +2,11 @@
     <div class="recipe-details" v-if="recipe">
       <h3>{{ recipe.name }}</h3>
       <ul>
-        <li v-for="ingredient in recipe.ingredients" :key="ingredient.name">
-          {{ ingredient.name }} - {{ ingredient.amount }} {{ ingredient.unit }}
-        </li>
+        <li v-for="(ingredient, index) in recipe.ingredients" :key="index">
+        {{ ingredient.name }} - {{ ingredient.amount }} {{ ingredient.unit }} 
+        - Cost: ${{ ingredient.cost.toFixed(2) }} 
+        - Calories: {{ ingredient.calories }} kcal
+      </li>
       </ul>
     </div>
   </template>
