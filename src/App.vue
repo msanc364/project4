@@ -2,7 +2,7 @@
   <div id="app">
     <RecipeList @recipe-selected="selectedRecipe = $event" />
     <RecipeDetails :recipe="selectedRecipe" />
-    <RecipeCostCalculator />
+    <RecipeCostCalculator :recipe="selectedRecipe" />
   </div>
 </template>
 
@@ -27,6 +27,7 @@ export default {
 </script>
 
 <style>
+@import './assets/styles.css';
 #app {
   display: flex;
   gap: 20px;
